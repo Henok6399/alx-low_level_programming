@@ -1,29 +1,26 @@
-#include "main.h"
-#include "string.h"
+#include "holberton.h"
 /**
- * _strcmp - compare two strings
- * @s1: the first string to be compared
- * @s2: the seconde string to be compared
- * Return: 0 if they are equal and 1 if s1 greater else 2
- */
+ * _strcmp - compares two strings
+ * @s1: string 1
+ * @s2: string 2
+ * Return: 0 if matching, and ns1 - ns2 if not matching
+*/
+
 int _strcmp(char *s1, char *s2)
 {
-	int i, len, value = 0;
+int i;
 
-	len = strlen(s1);
-	for (i = 0; i < len && s2[i] != '\0';  i++)
+/**
+ * We have reached the end of S1 OR we have reached the end of S2
+ * 
+*/
+
+for (i = 0; s1[i] != '\0' || s2[i] != '\0'; i++)
+{
+	if (s1[i] != s2[i])
 	{
-		if (s1[i] == s2[i]) continue;
-		else if (s1[i] > s2[i])
-		{
-			value = 1;
-			break;
-		}
-		else
-		{
-			value = -1;
-			break;
-		}
+		return (s1[i] - s2[i]);
 	}
-	return value;
+}
+return (0);
 }
