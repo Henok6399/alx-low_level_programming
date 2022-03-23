@@ -1,4 +1,5 @@
-#include "holberton.h"
+#include "main.h"
+#include "string.h"
 /**
  * *_strncat - concatenates n bytes of two strings
  * @dest: pointer destination
