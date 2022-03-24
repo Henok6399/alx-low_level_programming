@@ -1,1 +1,1 @@
-# arrays,pointers and strings blob
+# arrays,pointers and strings by chockity
