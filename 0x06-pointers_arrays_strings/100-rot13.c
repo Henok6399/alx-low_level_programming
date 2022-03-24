@@ -1,6 +1,5 @@
 #include "main.h"
 #include "string.h"
-#include <stdbool.h>
 /**
  * rot13 - encoding atext
  * @s: a string
