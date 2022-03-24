@@ -1,28 +1,27 @@
-#include "holberton.h"
-
+#include "main.h"
+#include "string.h"
 /**
- * leet - transform to leet
- * @s: char array string type
- * Return: s transformed
+ * leet - encoding to leet
+ * @s: string that encoded
+ * Return: char
  */
-
 char *leet(char *s)
 {
-	int i, ii;
-	char s1[] = "aeotl";
-	char S1[] = "AEOTL";
-	char s2[] = "43071";
+	int len, i;
 
-	for (i = 0; s[i] != '\0'; i++)
+	len = strlen(s);
+	for (i = 0; i < len; i++)
 	{
-		for (ii = 0; ii < 5; ii++)
-		{
-			if (s[i] == s1[ii] || s[i] == S1[ii])
-			{
-				s[i] = s2[ii];
-				break;
-			}
-		}
+		if (s[i] == 'a' || s[i] == 'A')
+			s[i] = '4';
+		else if (s[i] == 'e' || s[i] == 'E')
+			s[i] = '3';
+		else if (s[i] == 'o' || s[i] == 'O')
+			s[i] = '0';
+		else if (s[i] == 't' || s[i] == 'T')
+			s[i] = '7';
+		else if (s[i] == 'l' || s[i] == 'L')
+			s[i] = '1';
 	}
 	return (s);
 }

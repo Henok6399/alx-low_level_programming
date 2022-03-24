@@ -1,1 +1,1 @@
-# chockity pop
+# arrays,pointers and strings
