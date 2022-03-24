@@ -1,1 +1,2 @@
-# arrays,pointers and strings by chockity
+This README.md contains the tasks embedded in this folder Will update soon...
+1

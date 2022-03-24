@@ -1,39 +1,49 @@
 #include "main.h"
+#include <stdio.h>
 /**
- * print_number - print any number
- * @n: any number to be printed
- * Return: void
+ * print_number - Print an integer using only _putchar
+ * @n: integer to print
  */
+
 void print_number(int n)
 {
-	int digit = 0, i, tmp, current, power, j;
+	int power;
+	int neg;
+	int hold;
 
-	tmp = n;
-	while (tmp != 0)
+	neg = 0;
+	power = 1;
+	hold = n;
+	if (n < 0)
 	{
-		tmp = tmp / 10;
-		digit++;
+		_putchar('-');
+		neg = 1;
 	}
-	tmp = n;
-	if (digit == 0)
-		_putchar('0');
-	for (i = digit - 1; i >= 0; i--)
+
+	while (hold > 9 || hold < -9)
 	{
-		power = 1;
-		for (j = 1; j <= i; j++)
-			power = power * 10;
-		current = tmp / power;
-		tmp = tmp % power;
-		if (n < 0)
+		power *= 10;
+		hold /= 10;
+	}
+
+	while (power > 0)
+	{
+		if (power > 9)
 		{
-			current = -current;
-			if (i == digit - 1)
-				_putchar('-');
-			_putchar(current + '0');
+			if (!neg)
+				_putchar((n / power % 10) + '0');
+			else
+				_putchar((n / power % 10) * -1 + '0');
+
+			power /= 10;
 		}
-		else
+		if (power == 1)
 		{
-			_putchar(current + '0');
+			if (neg)
+				_putchar((n % 10) * -1 + '0');
+			else
+				_putchar(n % 10 + '0');
+			power = 0;
 		}
 	}
 }
