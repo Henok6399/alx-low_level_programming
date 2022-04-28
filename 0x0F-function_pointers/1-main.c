@@ -1,27 +1,5 @@
 #include <stdio.h>
-#include "function_pointers.h"
-
-/**
- * print_elem - prints an integer
- * @elem: the integer to print
- *
- * Return: Nothing.
- */
-void print_elem(int elem)
-{
-    printf("%d\n", elem);
-}
-
-/**
- * print_elem_hex - prints an integer, in hexadecimal
- * @elem: the integer to print
- *
- * Return: Nothing.
- */
-void print_elem_hex(int elem)
-{
-    printf("0x%x\n", elem);
-}
+#include "main.h"
 
 /**
  * main - check the code
@@ -30,9 +8,15 @@ void print_elem_hex(int elem)
  */
 int main(void)
 {
-    int array[5] = {0, 98, 402, 1024, 4096};
-
-    array_iterator(array, 5, &print_elem);
-    array_iterator(array, 5, &print_elem_hex);
+    print_binary(0);
+    printf("\n");
+    print_binary(1);
+    printf("\n");
+    print_binary(98);
+    printf("\n");
+    print_binary(1024);
+    printf("\n");
+    print_binary((1 << 10) + 1);
+    printf("\n");
     return (0);
 }
